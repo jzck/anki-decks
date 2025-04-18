@@ -14,5 +14,5 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           date=$(date +%y-%m-%d)
-          gh release delete --yes $date
+          gh release delete --yes $date || :
           gh release create --notes "" $date blind_chess.apkg
