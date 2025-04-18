@@ -11,7 +11,7 @@ jobs:
       - run: curl -LsSf https://astral.sh/uv/install.sh | sh
       - run: ./blind_chess.py
       - env:
-          GH_TOKEN: ${{ github.token }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           date=$(date +%y-%m-%d)
           gh release delete --yes $date || :
