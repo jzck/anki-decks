@@ -66,8 +66,9 @@ def notes():
         yield square_color(sq_name)
         yield knight_moves(sq_name)
 
-# randomize the order of the notes
-for note in random.shuffle(list(notes()))
+notes = list(notes())
+random.shuffle(notes)
+for note in notes:
   deck.add_note(note)
 
 out = 'blind_chess.apkg'
